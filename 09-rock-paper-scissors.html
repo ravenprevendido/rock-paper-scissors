@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors UPDATED</title>
+</head>
+<style>
+*{
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Neue Montreal', sans-serif;
+}
+
+
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 20px;
+    scroll-behavior: smooth;
+    background: #4b3857fa;
+    margin-bottom: 2rem;
+}
+
+button{
+    font-size: 20px;
+    padding: 10px 16px;
+    font-weight: 500;
+    background: #1385b9;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+button:hover{
+    background: none;
+    border: 1px solid #126c96;
+    color: #1385b9;
+    transition: 0.5s ease-in;
+    scale: (1,1);
+}
+
+p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.container{
+    box-shadow: 2px 4px 8px rgba(10, 10, 10, 0.5);
+    height: fit-content;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12rem;
+    background: #4e3550dc;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.content {
+    
+    display: block;
+    grid-template-columns: 130px 1fr;
+    gap: 30px;
+    margin: 30px ;
+    padding: 1rem;
+}
+
+
+.content p{
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.move-icon{
+    height: 50px;
+}
+
+.move-button{
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+    margin-bottom: 2rem;
+}
+
+.result {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.score{
+    margin-top: 60px;
+}
+
+/* .content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+} */
+
+</style>
+<body>
+    <div class="container">
+      
+    <p>Rock Paper Scissors</p>
+    <div class="content">
+        <button class="move-button js-rock-button"> <img src="images/rock-emoji.png"  alt="" class="move-icon move-rock"></button>
+            <!-- ===== -->
+        <button class="move-button js-paper-button"> <img src="images/paper-emoji.png"  alt="" class="move-icon move-paper"> </button>
+
+        <button class="move-button js-scissors-button"><img src="images/scissors-emoji.png" alt="" class="move-icon move-scissors"></button>
+    <p class="js-result result"></p>
+    <p class="js-moves  "></p>
+
+    <p class="js-score score"></p>
+
+       <button onclick="  // reset score man
+       score.wins = 0;
+       score.lose = 0;
+       score.tie = 0;
+       localStorage.removeItem('score');
+       updateScoreElement();
+       
+       " class="reset-score-button">Reset Score</button>
+       <button class="auto-play-button" onclick="autoPlay()">Auto Play</button>
+    </div>
+
+</div>
+  <script src="scripts/rock-paper-scissors.js"></script>
+</body>
+
+</html>
